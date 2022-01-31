@@ -22,4 +22,9 @@ Returns the GBC portrait of a card, upscaled to 114x94.
 ### CardInfo IsGem
 Returns true if given card has the Emerald, Ruby, or Sapphire mox sigils.
 ### AssetManager
-General utility for getting files from disk.
+General utility for getting files from disk. Supports PNG, TXT, CSV, and Asset Bundles.
+## Changelog
+### 1.1.0
+ * Added Asset Bundles to the Asset Manager
+### 1.0.0
+ * Initial Release
