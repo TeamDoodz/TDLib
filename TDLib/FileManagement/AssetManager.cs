@@ -31,7 +31,7 @@ namespace TDLib.FileManagement {
         /// <summary>
         /// Loads a PNG file from disk. <seealso href="https://answers.unity.com/questions/432655/loading-texture-file-from-pngjpg-file-on-disk.html"/>
         /// </summary>
-        /// <param name="name">The name of the image, not including the path and the extension.</param>
+        /// <param name="name">The name of the image, not including the path to the assets folder and the extension.</param>
         /// <returns>The image, as a Texture2D.</returns>
         public Texture2D LoadPNG(string name) {
             string path = PathFor(name,"png");
@@ -57,6 +57,15 @@ namespace TDLib.FileManagement {
 
         public string[] LoadCSV(string name) {
             return Regex.Split(File.ReadAllText(PathFor(name, "csv")),@",\s*");
+        }
+
+        /// <summary>
+        /// Loads an asset bundle from disk.
+        /// </summary>
+        /// <param name="name">The name of the asset bundle, not including the path to the assets folder and the extension.</param>
+        /// <returns>The Asset Bundle.</returns>
+        public AssetBundle LoadAssetBundle(string name) {
+            return AssetBundle.LoadFromFile(PathFor(name, ""));
         }
 
     }
