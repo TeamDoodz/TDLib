@@ -25,6 +25,10 @@ Returns true if given card has the Emerald, Ruby, or Sapphire mox sigils.
 Returns true if this sigil would benefit the player more if there was a gem on the board (gem dependant, etc.)
 ### Ability SynergyWithConduit
 Returns true if this sigil has an effect if within a circuit.
+### BoardManager GemsOnBoard
+Counts how many gem cards are on the board.
+### BoardManager ConduitsOnBoard
+Counts how many conduit cards are on the board.
 ### AssetManager
 General utility for getting files from disk. Supports PNG, TXT, CSV, and Asset Bundles.
 ## Changelog

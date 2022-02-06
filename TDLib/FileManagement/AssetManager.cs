@@ -58,7 +58,7 @@ namespace TDLib.FileManagement {
         public string[] LoadCSV(string name) {
             return Regex.Split(File.ReadAllText(PathFor(name, "csv")),@",\s*");
         }
-
+        /*
         /// <summary>
         /// Loads an asset bundle from disk.
         /// </summary>
@@ -67,7 +67,7 @@ namespace TDLib.FileManagement {
         public AssetBundle LoadAssetBundle(string name) {
             return AssetBundle.LoadFromFile(PathFor(name, ""));
         }
-
+        */
     }
 
 }
