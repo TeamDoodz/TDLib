@@ -29,6 +29,8 @@ Returns true if this sigil has an effect if within a circuit.
 Counts how many gem cards are on the board.
 ### BoardManager ConduitsOnBoard
 Counts how many conduit cards are on the board.
+### GetRandomGem
+Returns a random gem card from the Nature temple.
 ### AssetManager
 General utility for getting files from disk. Supports PNG, TXT, CSV, and Asset Bundles.
 ## Changelog
@@ -37,5 +39,6 @@ General utility for getting files from disk. Supports PNG, TXT, CSV, and Asset B
  * Added Ability SynergyWithConduit
  * Added BoardManager GemsOnBoard
  * Added BoardManager ConduitsOnBoard
+ * Added GetRandomGem
 ### 1.0.0
  * Initial Release

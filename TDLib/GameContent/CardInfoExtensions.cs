@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
 
@@ -82,6 +83,15 @@ namespace TDLib.GameContent {
 
 		public static bool IsGem(this CardInfo x) {
 			return x.HasAbility(Ability.GainGemBlue) || x.HasAbility(Ability.GainGemGreen) || x.HasAbility(Ability.GainGemOrange);
+		}
+
+		public static CardInfo GetRandomGem(int seed) {
+			var cards = NewCard.cards;
+			cards.RemoveAll((card) => {
+				return !(card.temple == CardTemple.Nature && card.traits.Contains(Trait.Gem));
+			});
+			if (cards.Count == 0) return CardLoader.GetCardByName("RingWorm");
+			return cards[SeededRandom.Range(0, cards.Count, seed)];
 		}
 
 	}

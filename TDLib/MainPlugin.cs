@@ -19,6 +19,8 @@ namespace TDLib {
 			logger = Logger;
 			logger.LogMessage($"{Name} v{Version} Loaded!");
 			Loaded = true;
+
+			//new HarmonyLib.Harmony(GUID).PatchAll();
 		}
 
 	}
