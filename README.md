@@ -32,7 +32,7 @@ Counts how many conduit cards are on the board.
 ### GetRandomGem
 Returns a random gem card from the Nature temple.
 ### AssetManager
-General utility for getting files from disk. Supports PNG, TXT, CSV, and Asset Bundles.
+General utility for getting files from disk. Supports PNG, TXT, CSV.
 ## Changelog
 ### 1.1.0
  * Added Ability SynergyWithGems
