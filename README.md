@@ -33,6 +33,9 @@ Counts how many conduit cards are on the board.
 General utility for getting files from disk. Supports PNG, TXT, CSV, and Asset Bundles.
 ## Changelog
 ### 1.1.0
- * Added Asset Bundles to the Asset Manager
+ * Added Ability SynergyWithGems
+ * Added Ability SynergyWithConduit
+ * Added BoardManager GemsOnBoard
+ * Added BoardManager ConduitsOnBoard
 ### 1.0.0
  * Initial Release
