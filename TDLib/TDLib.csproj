@@ -8,9 +8,6 @@
     <Reference Include="0Harmony">
       <HintPath>..\..\TDLib\TDLib\lib\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="API">
-      <HintPath>..\..\TDLib\TDLib\lib\API.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\TDLib\TDLib\lib\Assembly-CSharp.dll</HintPath>
     </Reference>

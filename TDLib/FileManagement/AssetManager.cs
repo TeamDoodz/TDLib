@@ -29,13 +29,22 @@ namespace TDLib.FileManagement {
         }
 
         /// <summary>
-        /// Loads a PNG file from disk. <seealso href="https://answers.unity.com/questions/432655/loading-texture-file-from-pngjpg-file-on-disk.html"/>
+        /// Loads a PNG file from the assets folder. <seealso href="https://answers.unity.com/questions/432655/loading-texture-file-from-pngjpg-file-on-disk.html"/>
         /// </summary>
         /// <param name="name">The name of the image, not including the path to the assets folder and the extension.</param>
         /// <returns>The image, as a Texture2D.</returns>
         public Texture2D LoadPNG(string name) {
             string path = PathFor(name,"png");
-            MainPlugin.logger.LogInfo($"Loading texture {name} ({path})");
+            return LoadPNGPath(path);
+        }
+
+        /// <summary>
+        /// Loads a PNG file from disk. <seealso href="https://answers.unity.com/questions/432655/loading-texture-file-from-pngjpg-file-on-disk.html"/>
+        /// </summary>
+        /// <param name="name">The path to the image.</param>
+        /// <returns>The image, as a Texture2D.</returns>
+        public Texture2D LoadPNGPath(string path) {
+            MainPlugin.logger.LogInfo($"Loading texture {path}");
 
             Texture2D tex = null;
             byte[] fileData;
@@ -46,7 +55,7 @@ namespace TDLib.FileManagement {
                 tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
                 tex.filterMode = FilterMode.Point;
             } else {
-                MainPlugin.logger.LogWarning($"Texture {name} ({path}) does not exist!");
+                MainPlugin.logger.LogWarning($"Texture {path} does not exist!");
             }
             return tex;
         }
