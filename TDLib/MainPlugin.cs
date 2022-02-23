@@ -9,7 +9,7 @@ namespace TDLib {
 
 		internal const string GUID = "io.github.TeamDoodz." + Name;
 		internal const string Name = "TDLib";
-		internal const string Version = "1.0.0";
+		internal const string Version = "2.0.0";
 
 		public static bool Loaded = false;
 

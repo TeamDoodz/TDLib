@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using APIPlugin;
 using DiskCardGame;
+using InscryptionAPI.Card;
 using UnityEngine;
 
 namespace TDLib.GameContent {
@@ -86,7 +87,8 @@ namespace TDLib.GameContent {
 		}
 
 		public static CardInfo GetRandomGem(int seed) {
-			var cards = NewCard.cards;
+			var cards = CardManager.AllCardsCopy;
+			//cards.RemoveAll();
 			cards.RemoveAll((card) => {
 				return !(card.temple == CardTemple.Nature && card.traits.Contains(Trait.Gem));
 			});
