@@ -35,6 +35,8 @@ Counts how many conduit cards are on the board.
 Returns a random gem card from the Nature temple.
 ### GetTypesWithAttribute
 Returns all types in the specified assembly that have the specified attribute.
+### AutoInit
+Automatically calls the `Init()` static method on this type when the plugin starts.
 ### AssetManager
 General utility for getting files from disk. Supports PNG, TXT, CSV.
 ## Changelog
@@ -43,6 +45,7 @@ General utility for getting files from disk. Supports PNG, TXT, CSV.
 * Added LoadPNGPath to AssetsManager
 * Added CardInfo IsSpecialSacc
 * Added GetTypesWithAttribute
+* Added AutoInit
 ### 1.1.0
  * Added Ability SynergyWithGems
  * Added Ability SynergyWithConduit
