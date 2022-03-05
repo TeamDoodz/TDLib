@@ -14,6 +14,7 @@ namespace TDLib.Attributes {
 					method = type.GetMethod("Init", BindingFlags.Static | BindingFlags.Public);
 				}
 				if (method != null) {
+					MainPlugin.logger.LogDebug($"Calling Init() method on {type.Name}");
 					method.Invoke(null, new object[] { });
 				} else {
 					MainPlugin.logger.LogWarning($"Could not find Init() method for type {type.Name}");
