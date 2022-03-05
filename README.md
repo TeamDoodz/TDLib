@@ -46,6 +46,7 @@ General utility for getting files from disk. Supports PNG, TXT, CSV.
 * Added CardInfo IsSpecialSacc
 * Added GetTypesWithAttribute
 * Added AutoInit
+* Mod now compiles with XML docs
 ### 1.1.0
  * Added Ability SynergyWithGems
  * Added Ability SynergyWithConduit
