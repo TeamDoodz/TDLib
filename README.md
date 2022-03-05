@@ -36,9 +36,10 @@ Returns a random gem card from the Nature temple.
 ### AssetManager
 General utility for getting files from disk. Supports PNG, TXT, CSV.
 ## Changelog
-### 2.0.0
+### 1.2.0
 * Mod now requires Kaycee's Mod and the API 2.0.
 * Added LoadPNGPath to AssetsManager
+* Added CardInfo IsSpecialSacc
 ### 1.1.0
  * Added Ability SynergyWithGems
  * Added Ability SynergyWithConduit
