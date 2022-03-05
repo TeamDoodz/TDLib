@@ -86,6 +86,10 @@ namespace TDLib.GameContent {
 			return x.HasAbility(Ability.GainGemBlue) || x.HasAbility(Ability.GainGemGreen) || x.HasAbility(Ability.GainGemOrange);
 		}
 
+		public static bool IsSpecialSacc(this CardInfo x) {
+			return x.HasAbility(Ability.TripleBlood) || x.HasAbility(Ability.Sacrificial);
+		}
+
 		public static CardInfo GetRandomGem(int seed) {
 			var cards = CardManager.AllCardsCopy;
 			//cards.RemoveAll();

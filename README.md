@@ -21,6 +21,8 @@ Returns the portrait of a card. If the card is for GBC only, it will return an u
 Returns the GBC portrait of a card, upscaled to 114x94.
 ### CardInfo IsGem
 Returns true if given card has the Emerald, Ruby, or Sapphire mox sigils.
+### CardInfo IsSpecialSacc
+Returns true if given card has Worthy Sacrifice or Many Lives sigils.
 ### Ability SynergyWithGems
 Returns true if this sigil would benefit the player more if there was a gem on the board (gem dependant, etc.)
 ### Ability SynergyWithConduit
