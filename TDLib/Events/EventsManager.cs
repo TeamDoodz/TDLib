@@ -12,6 +12,8 @@ namespace TDLib.Events {
 		/// Called when a battle starts.
 		/// </summary>
 		public static event Action<EncounterData> BattleStarted;
-		internal static void CallBattleStartedBecauseCSharpIsStupid(EncounterData obj) => BattleStarted.Invoke(obj);
+		internal static void CallBattleStarted(EncounterData obj) {
+			if(BattleStarted != null) BattleStarted.Invoke(obj);
+		}
 	}
 }
