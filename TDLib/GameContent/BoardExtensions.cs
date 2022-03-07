@@ -4,7 +4,15 @@ using System.Text;
 using DiskCardGame;
 
 namespace TDLib.GameContent {
+	/// <summary>
+	/// Extensions for <see cref="BoardManager"/>.
+	/// </summary>
 	public static class BoardExtensions {
+		/// <summary>
+		/// Returns the number of gems on the board, not counting opponent queue slots.
+		/// </summary>
+		/// <param name="board"></param>
+		/// <returns></returns>
 		public static int GemsOnBoard(this BoardManager board) {
 			int gems = 0;
 			foreach(var card in board.CardsOnBoard) {
@@ -14,6 +22,11 @@ namespace TDLib.GameContent {
 			}
 			return gems;
 		}
+		/// <summary>
+		/// Returns the number of conduits on the board, not counting opponent queue slots.
+		/// </summary>
+		/// <param name="board"></param>
+		/// <returns></returns>
 		public static int ConduitsOnBoard(this BoardManager board) {
 			int conduits = 0;
 			foreach (var card in board.CardsOnBoard) {

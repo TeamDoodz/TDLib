@@ -7,6 +7,9 @@ using InscryptionAPI.Card;
 using UnityEngine;
 
 namespace TDLib.GameContent {
+	/// <summary>
+	/// Extensions for <see cref="CardInfo"/>.
+	/// </summary>
 	public static class CardInfoExtensions {
 
 		/// <summary>
@@ -82,14 +85,29 @@ namespace TDLib.GameContent {
 			return myTexture2D;
 		}
 
+		/// <summary>
+		/// Does this card provide a gem usable for card playing?
+		/// </summary>
+		/// <param name="x"></param>
+		/// <returns></returns>
 		public static bool IsGem(this CardInfo x) {
 			return x.HasAbility(Ability.GainGemBlue) || x.HasAbility(Ability.GainGemGreen) || x.HasAbility(Ability.GainGemOrange);
 		}
 
+		/// <summary>
+		/// Does this card have special behaviours when sacrificed?
+		/// </summary>
+		/// <param name="x"></param>
+		/// <returns></returns>
 		public static bool IsSpecialSacc(this CardInfo x) {
 			return x.HasAbility(Ability.TripleBlood) || x.HasAbility(Ability.Sacrificial);
 		}
 
+		/// <summary>
+		/// Returns a random nature card with the Gem trait.
+		/// </summary>
+		/// <param name="seed">The random seed to use.</param>
+		/// <returns></returns>
 		public static CardInfo GetRandomGem(int seed) {
 			var cards = CardManager.AllCardsCopy;
 			//cards.RemoveAll();

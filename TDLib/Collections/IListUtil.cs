@@ -5,6 +5,9 @@ using System.Linq;
 using DiskCardGame;
 
 namespace TDLib.Collections {
+	/// <summary>
+	/// Utilities and extensions for <see cref="IList{T}"/>.
+	/// </summary>
 	public static class IListUtil {
 
 		/// <summary>

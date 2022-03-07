@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace TDLib.Strings {
+	/// <summary>
+	/// Extensions for <see cref="String"/> and string[].
+	/// </summary>
 	public static class StringExtensions {
 
 		/// <summary>
