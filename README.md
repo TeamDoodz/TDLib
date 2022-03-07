@@ -39,6 +39,8 @@ Returns all types in the specified assembly that have the specified attribute.
 Automatically calls the `Init()` static method on this type when the plugin starts.
 ### AssetManager
 General utility for getting files from disk. Supports PNG, TXT, CSV.
+### EventsManager
+Several events that mods can hook into, avoiding the need to create patches.
 ## Changelog
 ### 1.2.0
 * Mod now requires Kaycee's Mod and the API 2.0.
@@ -46,6 +48,7 @@ General utility for getting files from disk. Supports PNG, TXT, CSV.
 * Added CardInfo IsSpecialSacc
 * Added GetTypesWithAttribute
 * Added AutoInit
+* Added EventsManager
 * Mod now compiles with XML docs
 ### 1.1.0
  * Added Ability SynergyWithGems
