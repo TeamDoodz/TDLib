@@ -15,5 +15,12 @@ namespace TDLib.Events {
 		internal static void CallBattleStarted(EncounterData obj) {
 			if(BattleStarted != null) BattleStarted.Invoke(obj);
 		}
+		/// <summary>
+		/// Called when a battle ends.
+		/// </summary>
+		public static event Action BattleEnded;
+		internal static void CallBattleEnded() {
+			if(BattleEnded != null) BattleEnded.Invoke();
+		}
 	}
 }

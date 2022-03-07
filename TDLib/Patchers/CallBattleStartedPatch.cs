@@ -10,7 +10,7 @@ namespace TDLib.Patchers {
 	[HarmonyPatch("StartGame")]
 	static class CallBattleStartedPatch {
 		static void Postfix(EncounterData encounterData) {
-			EventsManager.CallBattleStartedBecauseCSharpIsStupid(encounterData);
+			EventsManager.CallBattleStarted(encounterData);
 		}
 	}
 }
