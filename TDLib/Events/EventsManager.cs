@@ -13,6 +13,7 @@ namespace TDLib.Events {
 		/// </summary>
 		public static event Action<EncounterData> BattleStarted;
 		internal static void CallBattleStarted(EncounterData obj) {
+			MainPlugin.logger.LogDebug($"Calling {nameof(BattleStarted)}");
 			if(BattleStarted != null) BattleStarted.Invoke(obj);
 		}
 		/// <summary>
@@ -20,6 +21,7 @@ namespace TDLib.Events {
 		/// </summary>
 		public static event Action BattleEnded;
 		internal static void CallBattleEnded() {
+			MainPlugin.logger.LogDebug($"Calling {nameof(BattleEnded)}");
 			if(BattleEnded != null) BattleEnded.Invoke();
 		}
 	}
