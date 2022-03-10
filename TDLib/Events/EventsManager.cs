@@ -24,5 +24,13 @@ namespace TDLib.Events {
 			MainPlugin.logger.LogDebug($"Calling {nameof(BattleEnded)}");
 			if(BattleEnded != null) BattleEnded.Invoke();
 		}
+		/// <summary>
+		/// Called when a run starts.
+		/// </summary>
+		public static event Action RunStarted;
+		internal static void CallRunStarted() {
+			MainPlugin.logger.LogDebug($"Calling {nameof(RunStarted)}");
+			if(RunStarted != null) RunStarted.Invoke();
+		}
 	}
 }

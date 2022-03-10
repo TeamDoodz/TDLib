@@ -7,7 +7,7 @@ using TDLib.Events;
 
 namespace TDLib.Patchers {
 	[HarmonyPatch(typeof(TurnManager))]
-	[HarmonyPatch("StartGame")]
+	[HarmonyPatch("StartGame",typeof(EncounterData))]
 	static class CallBattleStartedPatch {
 		static void Postfix(EncounterData encounterData) {
 			EventsManager.CallBattleStarted(encounterData);
