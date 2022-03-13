@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 using APIPlugin;
+using BepInEx.Bootstrap;
 using DiskCardGame;
 using InscryptionAPI.Card;
 using UnityEngine;
@@ -100,7 +102,35 @@ namespace TDLib.GameContent {
 		/// <param name="x"></param>
 		/// <returns></returns>
 		public static bool IsSpecialSacc(this CardInfo x) {
-			return x.HasAbility(Ability.TripleBlood) || x.HasAbility(Ability.Sacrificial);
+			List<Ability> bloodSigils = new List<Ability>() { 
+				Ability.TripleBlood,
+				Ability.Sacrificial
+			};
+			if(Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.voidSigils")) {
+				bloodSigils.AddRange(GetVoidBloodSigils());
+			}
+			if(Chainloader.PluginInfos.ContainsKey("org.memez4life.inscryption.customsigils")) {
+				bloodSigils.AddRange(GetMemezBloodSigils());
+			}
+			bool outp = false;
+			foreach(Ability ability in bloodSigils) {
+				if(bloodSigils.Contains(ability)) {
+					outp = true;
+					break;
+				}
+			}
+			return outp;
+		}
+
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		private static IEnumerable<Ability> GetVoidBloodSigils() {
+			yield return voidSigils.void_Pathetic.ability;
+			yield return voidSigils.void_BloodGrowth.ability;
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		private static IEnumerable<Ability> GetMemezBloodSigils() {
+			yield return Custom_Sigils.Bi_Blood.ability;
+			yield return Custom_Sigils.Quadra_Blood.ability;
 		}
 
 		/// <summary>

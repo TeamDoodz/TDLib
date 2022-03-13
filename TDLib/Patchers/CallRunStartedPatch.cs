@@ -9,8 +9,8 @@ namespace TDLib.Patchers {
 	[HarmonyPatch(typeof(AscensionMenuScreens))]
 	[HarmonyPatch("TransitionToGame")]
 	static class CallRunStartedPatch {
-		static void Postfix() {
-			EventsManager.CallRunStarted();
+		static void Postfix(bool newRun) {
+			if(newRun) EventsManager.CallRunStarted();
 		}
 	}
 }

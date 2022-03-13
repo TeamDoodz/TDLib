@@ -8,6 +8,9 @@ namespace TDLib {
 	/// The main plugin of the mod.
 	/// </summary>
 	[BepInPlugin(GUID, Name, Version)]
+	[BepInDependency("cyantist.inscryption.api")]
+	[BepInDependency("extraVoid.inscryption.voidSigils",BepInDependency.DependencyFlags.SoftDependency)]
+	[BepInDependency("org.memez4life.inscryption.customsigils", BepInDependency.DependencyFlags.SoftDependency)]
 	public class MainPlugin : BaseUnityPlugin {
 
 		internal const string GUID = "io.github.TeamDoodz." + Name;
