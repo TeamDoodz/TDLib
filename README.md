@@ -39,6 +39,8 @@ Returns a random gem card from the Nature temple.
 Returns all types in the specified assembly that have the specified attribute.
 ### AutoInit
 Automatically calls the `Init()` static method on this type when the plugin starts.
+### ConfigHelperBase
+Classes to help simplify mods with lots of config options.
 ### AssetManager
 General utility for getting files from disk. Supports PNG, TXT, CSV.
 ### EventsManager
@@ -52,6 +54,7 @@ Several events that mods can hook into, avoiding the need to create patches.
 * Added GetTypesWithAttribute
 * Added AutoInit
 * Added EventsManager
+* Added ConfigHelperBase
 * Mod now compiles with XML docs
 ### 1.1.0
  * Added Ability SynergyWithGems

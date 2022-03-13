@@ -23,9 +23,11 @@ namespace TDLib {
 		public static bool Loaded = false;
 
 		internal static ManualLogSource logger;
+		internal static ConfigFile cfg;
 
 		private void Awake() {
 			logger = Logger;
+			cfg = Config;
 			logger.LogMessage($"{Name} v{Version} Loaded!");
 			Loaded = true;
 

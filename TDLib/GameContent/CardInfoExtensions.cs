@@ -113,8 +113,9 @@ namespace TDLib.GameContent {
 				bloodSigils.AddRange(GetMemezBloodSigils());
 			}
 			bool outp = false;
-			foreach(Ability ability in bloodSigils) {
+			foreach(Ability ability in x.Abilities) {
 				if(bloodSigils.Contains(ability)) {
+					MainPlugin.logger.LogDebug($"{x.name} is special sacc");
 					outp = true;
 					break;
 				}
@@ -149,9 +150,10 @@ namespace TDLib.GameContent {
 				boneSigils.AddRange(GetMemezBoneSigils());
 			}
 			bool outp = false;
-			foreach(Ability ability in boneSigils) {
+			foreach(Ability ability in x.Abilities) {
 				if(boneSigils.Contains(ability)) {
 					outp = true;
+					MainPlugin.logger.LogDebug($"{x.name} is special bone");
 					break;
 				}
 			}

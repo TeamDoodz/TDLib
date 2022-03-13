@@ -18,6 +18,9 @@
     <Reference Include="BepInEx">
       <HintPath>..\..\TDLib\TDLib\lib\BepInEx.dll</HintPath>
     </Reference>
+    <Reference Include="Custom_Sigils">
+      <HintPath>lib\Custom_Sigils.dll</HintPath>
+    </Reference>
     <Reference Include="InscryptionAPI">
       <HintPath>..\..\Act3Cards\Act3Cards\lib\InscryptionAPI.dll</HintPath>
     </Reference>
@@ -33,6 +36,17 @@
     <Reference Include="UnityEngine.ImageConversionModule">
       <HintPath>lib\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
+    <Reference Include="voidSigils">
+      <HintPath>lib\voidSigils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
 </Project>
