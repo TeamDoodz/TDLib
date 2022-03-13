@@ -23,6 +23,8 @@ Returns the GBC portrait of a card, upscaled to 114x94.
 Returns true if given card has the Emerald, Ruby, or Sapphire mox sigils.
 ### CardInfo IsSpecialSacc
 Returns true if given card has Worthy Sacrifice or Many Lives sigils.
+### CardInfo IsSpecialBone
+Returns true if given card has the Bone King sigil.
 ### Ability SynergyWithGems
 Returns true if this sigil would benefit the player more if there was a gem on the board (gem dependant, etc.)
 ### Ability SynergyWithConduit
@@ -46,6 +48,7 @@ Several events that mods can hook into, avoiding the need to create patches.
 * Mod now requires Kaycee's Mod and the API 2.0.
 * Added LoadPNGPath to AssetsManager
 * Added CardInfo IsSpecialSacc
+* Added CardInfo IsSpecialBone
 * Added GetTypesWithAttribute
 * Added AutoInit
 * Added EventsManager

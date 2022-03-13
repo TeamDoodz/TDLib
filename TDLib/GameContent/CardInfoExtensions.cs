@@ -134,6 +134,43 @@ namespace TDLib.GameContent {
 		}
 
 		/// <summary>
+		/// Does this card have special behaviours for its bone count?
+		/// </summary>
+		/// <param name="x"></param>
+		/// <returns></returns>
+		public static bool IsSpecialBone(this CardInfo x) {
+			List<Ability> boneSigils = new List<Ability>() {
+				Ability.QuadrupleBones
+			};
+			if(Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.voidSigils")) {
+				boneSigils.AddRange(GetVoidBoneSigils());
+			}
+			if(Chainloader.PluginInfos.ContainsKey("org.memez4life.inscryption.customsigils")) {
+				boneSigils.AddRange(GetMemezBoneSigils());
+			}
+			bool outp = false;
+			foreach(Ability ability in boneSigils) {
+				if(boneSigils.Contains(ability)) {
+					outp = true;
+					break;
+				}
+			}
+			return outp;
+		}
+
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		private static IEnumerable<Ability> GetVoidBoneSigils() {
+			yield return voidSigils.void_Boneless.ability;
+		}
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		private static IEnumerable<Ability> GetMemezBoneSigils() {
+			yield return Custom_Sigils.TwoDeathBones.ability;
+			yield return Custom_Sigils.ThreeDeathBones.ability;
+			yield return Custom_Sigils.FiveDeathBones.ability;
+			yield return Custom_Sigils.SixDeathBones.ability;
+		}
+
+		/// <summary>
 		/// Returns a random nature card with the Gem trait.
 		/// </summary>
 		/// <param name="seed">The random seed to use.</param>
