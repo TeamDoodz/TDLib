@@ -37,7 +37,8 @@ namespace TDLib {
 
 			new HarmonyLib.Harmony(GUID).PatchAll();
 			if(DoVanillaCardByName.GetValue()) {
-				new HarmonyLib.Harmony("cyantist.inscryption.api").Unpatch(typeof(CardLoader).GetMethod("GetCardByName"), HarmonyLib.HarmonyPatchType.Prefix);
+				logger.LogInfo("Unpatching API patch for GetCardByName");
+				new HarmonyLib.Harmony(GUID).Unpatch(typeof(CardLoader).GetMethod("GetCardByName"), HarmonyLib.HarmonyPatchType.Prefix, "cyantist.inscryption.api");
 			}
 		}
 
