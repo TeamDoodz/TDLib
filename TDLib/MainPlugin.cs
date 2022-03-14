@@ -2,6 +2,8 @@
 using BepInEx.Logging;
 using BepInEx.Configuration;
 using System;
+using TDLib.Config;
+using DiskCardGame;
 
 namespace TDLib {
 	/// <summary>
@@ -25,6 +27,8 @@ namespace TDLib {
 		internal static ManualLogSource logger;
 		internal static ConfigFile cfg;
 
+		private BasicConfigHelper<bool> DoVanillaCardByName = new BasicConfigHelper<bool>("DoVanillaCardByName", "The API modifies the vanilla code for finding cards based on their name in a way that can break mods like Act3Cards. If you are having issues like cards being something they shouldn't or errors that mention \"GetNonGuidName\", turn this setting on.", false, "Dev");
+
 		private void Awake() {
 			logger = Logger;
 			cfg = Config;
@@ -32,6 +36,9 @@ namespace TDLib {
 			Loaded = true;
 
 			new HarmonyLib.Harmony(GUID).PatchAll();
+			if(DoVanillaCardByName.GetValue()) {
+				new HarmonyLib.Harmony("cyantist.inscryption.api").Unpatch(typeof(CardLoader).GetMethod("GetCardByName"), HarmonyLib.HarmonyPatchType.Prefix);
+			}
 		}
 
 	}
