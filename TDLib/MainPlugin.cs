@@ -4,6 +4,7 @@ using BepInEx.Configuration;
 using System;
 using TDLib.Config;
 using DiskCardGame;
+using InscryptionAPI.Card;
 
 namespace TDLib {
 	/// <summary>
@@ -34,6 +35,22 @@ namespace TDLib {
 			Loaded = true;
 
 			new HarmonyLib.Harmony(GUID).PatchAll();
+
+			{
+				CardInfo test = CardLoader.GetCardByName("MOON");
+				logger.LogDebug($"Test card is null: {test == null}");
+				if(test != null) {
+				logger.LogDebug($"Test card name: {test.name}");
+					if(test.name != "MOON") {
+						logger.LogError  ("---------------------------[READ THIS PLEASE]----------------------------");
+						logger.LogWarning("If you are reading this, it means that prefix-insensitive card searching");
+						logger.LogWarning("has not been removed from the API. This \"feature\" has the potential to");
+						logger.LogWarning("break tons of mods, and maybe even the base game itself.");
+						logger.LogWarning("Learn more: https://github.com/ScottWilson0903/InscryptionAPI/issues/44");
+						logger.LogError  ("-------------------------------------------------------------------------");
+					}
+				}
+			}
 		}
 
 	}
