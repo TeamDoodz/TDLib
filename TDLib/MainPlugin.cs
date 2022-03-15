@@ -121,22 +121,22 @@ namespace TDLib {
 				if(card != null) {
 					logger.LogDebug($"Test card name: {card.name}");
 					if(card.name != "AutoPrefixCheck1") {
-						logger.LogError  ("---------------------------[READ THIS PLEASE]----------------------------");
+						logger.LogError("---------------------------[READ THIS PLEASE]----------------------------");
 						logger.LogWarning("If you are reading this, it means that auto-prefixes have not been");
 						logger.LogWarning("removed from the API. This \"feature\" automatically modifies the IDs");
 						logger.LogWarning("of cards without the modder's consent (and has no way to turn it off),");
 						logger.LogWarning("resulting in potential bugs as well as general annoyance.");
 						//logger.LogWarning("Learn more: (link doesn't exist yet)");
-						logger.LogError  ("-------------------------------------------------------------------------");
+						logger.LogError("-------------------------------------------------------------------------");
 					}
 				}
 				if(PrefixInsensitiveExists) {
-					logger.LogError  ("---------------------------[READ THIS PLEASE]----------------------------");
+					logger.LogError("---------------------------[READ THIS PLEASE]----------------------------");
 					logger.LogWarning("If you are reading this, it means that prefix-insensitive card searching");
 					logger.LogWarning("has not been removed from the API. This has the potential to break tons");
 					logger.LogWarning("of mods, and maybe even the base game itself.");
 					logger.LogWarning("Learn more: https://github.com/ScottWilson0903/InscryptionAPI/issues/44");
-					logger.LogError  ("-------------------------------------------------------------------------");
+					logger.LogError("-------------------------------------------------------------------------");
 				}
 			}
 		}

@@ -1,4 +1,6 @@
 ﻿
+using BepInEx.Configuration;
+
 namespace TDLib.Config {
 	public class TweakConfigHelper<T> : ConfigHelperBase<T> {
 		public string TweakName { get; }
@@ -6,11 +8,12 @@ namespace TDLib.Config {
 		public string Description { get; }
 		public T Default { get; }
 
-		public TweakConfigHelper(string Name, string Description = "", T Default = default(T), string TweakName = "") {
+		public TweakConfigHelper(ConfigFile file, string Name, string Description = "", T Default = default(T), string TweakName = "") {
 			this.TweakName = TweakName;
 			this.Name = Name;
 			this.Default = Default;
 			this.Description = Description;
+			this.file = file;
 		}
 
 		private T valueCache;
@@ -18,7 +21,7 @@ namespace TDLib.Config {
 		public override T GetValue() {
 			if (cacheFilled) return valueCache;
 			else {
-				valueCache = MainPlugin.cfg.Bind("Tweaks."+TweakName, Name, Default, Description).Value;
+				valueCache = file.Bind("Tweaks."+TweakName, Name, Default, Description).Value;
 				cacheFilled = true;
 				return valueCache;
 			}

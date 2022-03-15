@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using BepInEx.Configuration;
 using TDLib;
 
 namespace TDLib.Config {
@@ -15,13 +16,15 @@ namespace TDLib.Config {
 			public int Points;
 		}
 
-		public ChallengeConfigHelper(ChallengeConfigData DefaultData) {
+		public ChallengeConfigHelper(ConfigFile file, ChallengeConfigData DefaultData) {
 			this.Default = DefaultData;
 			this.ChallengeName = Regex.Replace(DefaultData.Title, @"\s", "");
+			this.file = file;
 		}
-		public ChallengeConfigHelper(ChallengeConfigData DefaultData, string Name) {
+		public ChallengeConfigHelper(ConfigFile file, ChallengeConfigData DefaultData, string Name) {
 			this.Default = DefaultData;
 			this.ChallengeName = Name;
+			this.file = file;
 		}
 
 		protected Dictionary<string, Func<string>> customParse = new Dictionary<string, Func<string>>();
