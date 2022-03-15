@@ -15,18 +15,36 @@ namespace TDLib.Attributes {
 		/// </summary>
 		/// <param name="assembly">The assembly to search for classes in.</param>
 		public static void CallAllInit(Assembly assembly) {
+			Dictionary<Priority, List<MethodInfo>> Inits = new Dictionary<Priority, List<MethodInfo>>();
+			Inits.Add(Priority.High, new List<MethodInfo>());
+			Inits.Add(Priority.Medium, new List<MethodInfo>());
+			Inits.Add(Priority.Low, new List<MethodInfo>());
+
 			foreach (var type in AttributeUtils.GetTypesWithAttribute<AutoInitAttribute>(assembly)) {
 				var method = type.GetMethod("Init", BindingFlags.Static | BindingFlags.NonPublic);
 				if (method == null) {
 					method = type.GetMethod("Init", BindingFlags.Static | BindingFlags.Public);
 				}
 				if (method != null) {
-					MainPlugin.logger.LogDebug($"Calling Init() method on {type.Name}");
-					method.Invoke(null, new object[] { });
+					Inits[type.GetCustomAttribute<AutoInitAttribute>().priority].Add(method);
 				} else {
 					MainPlugin.logger.LogWarning($"Could not find Init() method for type {type.Name}");
 				}
 			}
+			foreach(var methodList in Inits.Values) {
+				foreach(var method in methodList) {
+					method.Invoke(null, new object[] { });
+				}
+			}
+		}
+		public AutoInitAttribute(Priority priority = Priority.Medium) {
+			this.priority = priority;
+		}
+		public Priority priority { get; private set; }
+		public enum Priority {
+			Low,
+			Medium,
+			High,
 		}
 	}
 }
