@@ -14,6 +14,7 @@ namespace TDLib {
 	/// </summary>
 	[BepInPlugin(GUID, Name, Version)]
 	[BepInDependency("cyantist.inscryption.api")]
+	[BepInDependency("community.inscryption.patch")]
 	[BepInDependency("extraVoid.inscryption.voidSigils", BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("org.memez4life.inscryption.customsigils", BepInDependency.DependencyFlags.SoftDependency)]
 	public class MainPlugin : BaseUnityPlugin {

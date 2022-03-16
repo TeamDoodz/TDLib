@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,6 +24,9 @@
     </Reference>
     <Reference Include="InscryptionAPI">
       <HintPath>..\..\Act3Cards\Act3Cards\lib\InscryptionAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="InscryptionCommunityPatch">
+      <HintPath>lib\InscryptionCommunityPatch.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>lib\Sirenix.Serialization.dll</HintPath>
