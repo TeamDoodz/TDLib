@@ -23,7 +23,7 @@ namespace TDLib.Config {
 		public override T GetValue() {
 			if (cacheFilled) return valueCache;
 			else {
-				valueCache = MainPlugin.cfg.Bind(Category, Name, Default, Description).Value;
+				valueCache = file.Bind(Category, Name, Default, Description).Value;
 				cacheFilled = true;
 				return valueCache;
 			}

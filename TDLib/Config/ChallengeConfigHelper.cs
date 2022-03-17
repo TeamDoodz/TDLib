@@ -41,9 +41,9 @@ namespace TDLib.Config {
 			if (cacheFilled) return valueCache;
 			else {
 				valueCache = new ChallengeConfigData() {
-					Title = MainPlugin.cfg.Bind($"Challenges.{ChallengeName}", "Title", Default.Title, "The title of the challenge.").Value,
-					Description = MainPlugin.cfg.Bind($"Challenges.{ChallengeName}", "Description", Default.Description, "The description of the challenge.").Value,
-					Points = MainPlugin.cfg.Bind($"Challenges.{ChallengeName}", "Points", Default.Points, "How many Challenge Points this challenge is worth.").Value,
+					Title = file.Bind($"Challenges.{ChallengeName}", "Title", Default.Title, "The title of the challenge.").Value,
+					Description = file.Bind($"Challenges.{ChallengeName}", "Description", Default.Description, "The description of the challenge.").Value,
+					Points = file.Bind($"Challenges.{ChallengeName}", "Points", Default.Points, "How many Challenge Points this challenge is worth.").Value,
 				};
 				cacheFilled = true;
 				return valueCache;
