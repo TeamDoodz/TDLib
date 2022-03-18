@@ -21,6 +21,9 @@ namespace TDLib.Config {
 		private T valueCache;
 		private bool cacheFilled = false;
 		public override T GetValue() {
+			if(file == null) {
+				throw new InvalidOperationException("\"file\" is null.");
+			}
 			if (cacheFilled) return valueCache;
 			else {
 				valueCache = file.Bind(Category, Name, Default, Description).Value;
