@@ -28,6 +28,9 @@
     <Reference Include="InscryptionCommunityPatch">
       <HintPath>lib\InscryptionCommunityPatch.dll</HintPath>
     </Reference>
+    <Reference Include="LifeCost">
+      <HintPath>lib\LifeCost.dll</HintPath>
+    </Reference>
     <Reference Include="Sirenix.Serialization">
       <HintPath>lib\Sirenix.Serialization.dll</HintPath>
     </Reference>

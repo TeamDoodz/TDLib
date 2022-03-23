@@ -33,7 +33,11 @@ namespace TDLib.Attributes {
 			}
 			foreach(var methodList in Inits.Values) {
 				foreach(var method in methodList) {
-					method.Invoke(null, new object[] { });
+					try {
+						method.Invoke(null, new object[] { });
+					} catch(Exception ex) {
+						MainPlugin.logger.LogError($"Error calling Init on {method.DeclaringType.Name}: {ex}");
+					}
 				}
 			}
 		}

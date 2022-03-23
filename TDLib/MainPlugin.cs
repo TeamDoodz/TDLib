@@ -4,6 +4,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using DiskCardGame;
+using HarmonyLib;
 using InscryptionAPI.Card;
 using TDLib.Attributes;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace TDLib {
 	[BepInDependency("community.inscryption.patch")]
 	[BepInDependency("extraVoid.inscryption.voidSigils", BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("org.memez4life.inscryption.customsigils", BepInDependency.DependencyFlags.SoftDependency)]
+	[BepInDependency("extraVoid.inscryption.LifeCost", BepInDependency.DependencyFlags.SoftDependency)]
 	public class MainPlugin : BaseUnityPlugin {
 
 		internal const string GUID = "io.github.TeamDoodz." + Name;
@@ -30,17 +32,19 @@ namespace TDLib {
 
 		internal static ManualLogSource logger;
 		internal static ConfigFile cfg;
+		internal static Harmony harmony;
 
 		private void Awake() {
 			logger = Logger;
 			cfg = Config;
-			logger.LogMessage($"{Name} v{Version} Loaded!");
+			harmony = new Harmony(GUID);
 			Loaded = true;
 
-			new HarmonyLib.Harmony(GUID).PatchAll();
+			harmony.PatchAll();
 
 			AutoInitAttribute.CallAllInit(Assembly.GetExecutingAssembly());
 
+			logger.LogMessage($"{Name} v{Version} Loaded!");
 		}
 
 	}
