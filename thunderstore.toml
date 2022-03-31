@@ -1,0 +1,27 @@
+[config]
+schemaVersion = "0.0.1"
+
+[package]
+namespace = "TeamDoodz"
+name = "TDLib"
+versionNumber = "1.2.0"
+description = "Functionality used by most of my other mods"
+websiteUrl = "https://github.com/TeamDoodz/TDLib"
+containsNsfwContent = false
+
+[package.dependencies]
+API_dev-API = "2.0.2"
+
+[build]
+icon = "./icon.png"
+readme = "./README.md"
+outdir = "./build"
+
+[[build.copy]]
+source = "TDLib/bin/Debug/netstandard2.0/TDLib.dll"
+target = "plugins/"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = []
+categories = []

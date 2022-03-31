@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace TDLib.Collections {
+	/// <summary>
+	/// Extensions for <see cref="Dictionary{TKey, TValue}"/>.
+	/// </summary>
 	public static class DictionaryUtil {
 
 		/// <summary>
