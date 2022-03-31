@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 namespace = "TeamDoodz"
 name = "TDLib"
 versionNumber = "1.2.0"
-description = "Example mod description"
+description = "Functionality used by most of my other mods"
 websiteUrl = "https://github.com/TeamDoodz/TDLib"
 containsNsfwContent = false
 
